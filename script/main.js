@@ -1,8 +1,20 @@
+let datas = Array({name:"ecole1",type:"par dossier", lien:"insert link",date:"date"},{name:"ecole2",type:"par concours", lien:"insert link",date:"date"});
+const keys=Array("name","type","lien","date");
 //on met les fonctions pour gérer les lignes du tableau
 const addEntries=()=>{
     //executé lors du chargement de la page pour créer les lignes du tableau
     //lit le fichier où la liste d'école est rangée et créé les lignes
+    const tableau= document.getElementById("tabledatas");
+    for(let i=0;i<datas.length;i++){
+        let row = tableau.insertRow();
+        for(let j=0;j<keys.length;j++){
+            let cell = row.insertCell();
+            cell.append(datas[i][keys[j]]);
+        }
+    }
 }
+
+addEntries();
 
 const sortEntries=(sortingType)=>{
     if(sortingType=="alphabetique"){
