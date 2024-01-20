@@ -1,4 +1,4 @@
-[
+const datas=Array(
     {
         "name":"fecole1",
         "type":"dossier",
@@ -11,4 +11,4 @@
         "lien":"insert link",
         "date":"date"
     }
-]
+);

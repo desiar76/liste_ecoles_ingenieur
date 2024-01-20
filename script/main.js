@@ -1,35 +1,3 @@
-let datas;
-document.addEventListener("DOMContentLoaded", function() {
-    // Utilisation de la méthode fetch pour récupérer les données du fichier JSON
-    fetch("../res/liste_ecole.json")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Erreur de réseau ou fichier introuvable");
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Les données JSON sont disponibles ici
-        console.log(data);
-        datas=data;
-  
-        // Utilisez les données comme vous le souhaitez
-        var nom = data.nom;
-        var age = data.age;
-        var ville = data.ville;
-  
-        // Faites quelque chose avec les données récupérées
-        console.log("Nom:", nom);
-        console.log("Âge:", age);
-        console.log("Ville:", ville);
-      })
-      .catch(error => {
-        console.error("Erreur lors de la récupération des données:", error);
-      });
-  });
-  
-
-//const datas = JSON.parse(liste_ecole);//Array({name:"fecole1",type:"dossier", lien:"insert link",date:"date"},{name:"ecole2",type:"concours", lien:"insert link",date:"date"});
 let cache =datas;
 const keys=Array("name","type","lien","date");
 //on met les fonctions pour gérer les lignes du tableau
