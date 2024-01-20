@@ -9,7 +9,7 @@ const datas=Array(
         "name":"ecole2",
         "type":"concours",
         "lien":"insert link",
-        "date":new Date('02-21, 2024 GMT')
+        "date":new Date('02-21, 2024')
     }
 );
 /**Créer une nouvelle donnée :
@@ -18,6 +18,6 @@ const datas=Array(
         "name":"ecole2",
         "type":"concours/dossier",
         "lien":"insert link",
-        "date":Date.parse('dd-mm-2024 00:00:00 GMT')
+        "date":new Date('dd-mm, 2024')
     }
  */

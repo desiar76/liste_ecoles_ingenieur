@@ -9,7 +9,21 @@ const addEntries=(tabToUse)=>{
         let row = tableau.insertRow();
         for(let j=0;j<keys.length;j++){
             let cell = row.insertCell();
-            cell.append(tabToUse[i][keys[j]]);
+            if(keys[j]!="date"){
+                cell.append(tabToUse[i][keys[j]]);
+            }
+            else{
+                let preFormat ="";
+                if(tabToUse[i][keys[j]].getDate()<10){
+                    preFormat+="0";
+                }
+                preFormat+=tabToUse[i][keys[j]].getDate() +'/';
+                if(tabToUse[i][keys[j]].getMonth()<10){
+                    preFormat+="0";
+                }
+                preFormat+=tabToUse[i][keys[j]].getMonth();
+                cell.append(preFormat);
+            }
         }
     }
 }
@@ -44,6 +58,8 @@ const sortEntries=(sortingType)=>{
     }
     else if(sortingType=="parDateLimite"){
         //range les écoles par date limite d'inscription
+        cache.sort((a,b) => (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0));
+        reloadEntries(cache);
     }
     else{
         alert("Fonction non implémentée");
@@ -72,11 +88,13 @@ const reloadEntries=(tabToUse)=>{
 const buttonAlphabetique=document.getElementById("alphabetique");
 const buttonDossier=document.getElementById("parDossier");
 const buttonConcours=document.getElementById("parConcours");
+const buttonDateLimite=document.getElementById("dateLimite");
 const buttonReset=document.getElementById("reset");
 
 buttonAlphabetique.addEventListener("click", function(){ if(loaded==true)sortEntries("alphabetique")});
 buttonDossier.addEventListener("click",function(){ if(loaded==true)sortEntries("parDossier")});
 buttonConcours.addEventListener("click",function(){ if(loaded==true)sortEntries("parConcours")});
+buttonDateLimite.addEventListener("click",function(){ if(loaded==true)sortEntries("parDateLimite")});
 buttonReset.addEventListener("click",function(){ if(loaded==true)resetDatas()});
 
 const loaded = true;
