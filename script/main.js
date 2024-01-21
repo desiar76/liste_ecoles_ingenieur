@@ -1,5 +1,5 @@
 let cache =datas;
-const keys=Array("name","type","lien","date");
+const keys=Array("name","type","lien","date","intitulé","statut","frais-boursiers");
 //on met les fonctions pour gérer les lignes du tableau
 const addEntries=(tabToUse)=>{
     //executé lors du chargement de la page pour créer les lignes du tableau
@@ -10,7 +10,13 @@ const addEntries=(tabToUse)=>{
         for(let j=0;j<keys.length;j++){
             let cell = row.insertCell();
             if(keys[j]!="date"){
-                cell.append(tabToUse[i][keys[j]]);
+                if(keys[j]!="lien"){
+                    cell.append(tabToUse[i][keys[j]]);
+                }
+                else{
+                    cell.innerHTML ="<a href=\""+tabToUse[i][keys[j]]+"\">"+tabToUse[i][keys[j]]+"</a>"+i;
+                }
+                
             }
             else{
                 let preFormat ="";
@@ -21,7 +27,7 @@ const addEntries=(tabToUse)=>{
                 if(tabToUse[i][keys[j]].getMonth()<10){
                     preFormat+="0";
                 }
-                preFormat+=tabToUse[i][keys[j]].getMonth();
+                preFormat+=(tabToUse[i][keys[j]].getMonth()+1);
                 cell.append(preFormat);
             }
         }
@@ -70,6 +76,9 @@ const deleteEntries=()=>{
     const tableau= document.getElementById("tabledatas");
     for(let i =0;i<=tableau.rows.length;i++){
         tableau.deleteRow(0);
+    }
+    if(tableau.rows.length!=0){
+        deleteEntries();
     }
 }
 
