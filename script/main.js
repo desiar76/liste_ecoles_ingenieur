@@ -12,9 +12,14 @@ const addEntries=(tabToUse)=>{
             if(keys[j]!="date"){
                 if(keys[j]!="lien"){
                     cell.append(tabToUse[i][keys[j]]);
+                    if(keys[j]=="name"){
+                        if(typeof tabToUse[i].plus!="undefined"){
+                            cell.innerHTML +="<button onclick=\"showPlus("+i+")\">Plus</button>";
+                        }
+                    }
                 }
                 else{
-                    cell.innerHTML ="<a href=\""+tabToUse[i][keys[j]]+"\">"+tabToUse[i][keys[j]]+"</a>"+i;
+                    cell.innerHTML ="<a href=\""+tabToUse[i][keys[j]]+"\">"+tabToUse[i][keys[j]]+"</a>";
                 }
                 
             }
@@ -107,3 +112,9 @@ buttonDateLimite.addEventListener("click",function(){ if(loaded==true)sortEntrie
 buttonReset.addEventListener("click",function(){ if(loaded==true)resetDatas()});
 
 const loaded = true;
+
+const showPlus=(id)=>{
+    if(typeof cache[id].plus!="undefined"){
+        alert("Plus d'infos :\n"+cache[id].plus);
+    }
+}

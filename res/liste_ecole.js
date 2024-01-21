@@ -30,10 +30,21 @@ const datas=Array(
         "name":"Centrale Lille",
         "type":"concours",
         "lien":"https://ecole.centralelille.fr/formation/themes-et-parcours-en-3e-annee/smart-systems-and-smart-environments/",
-        "date":new Date('mm-dd, 2024 GMT'),
+        "date":new Date('03-06, 2024 GMT'),
         "intitulé":"Systèmes et environnements intelligents",
+        "statut":"étudiant puis possibilité alternance année 3",
+        "frais-boursiers":"exonéré",
+        "plus":"https://ecole.centralelille.fr/wp-content/uploads/sites/5/pdf/plaquette-ecole-centrale-lille.pdf"
+    },
+    {
+        "name":"Centrale Méditerranée",
+        "type":"concours",
+        "lien":"https://www.centrale-mediterranee.fr/fr/formation/ingenieur-centralien/programme-ingenieur",
+        "date":new Date('03-06, 2024 GMT'),
+        "intitulé":"Ingénieur centralien (options dès le semestre 7)",
         "statut":"",
-        "frais-boursiers":""
+        "frais-boursiers":"exonéré",
+        "plus":"Cette école n'est pas dans mes premiers choix"
     }
 );
 /**Créer une nouvelle donnée :
