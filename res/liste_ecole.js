@@ -54,7 +54,7 @@ const datas=Array(
         "intitulé":"Ingénieur·e informatique par apprentissage",
         "statut":"alternance",
         "frais-boursiers":"voir alternance.imt.fr à partir du 01/02",
-        "plus":"-https://www.enssat.fr/uploads/site/documents/concours/Notice-Concours_Formations-apprentissage_Enssat.pdf\n-J'ai postulé l'année dernière et je réessai cette année\n-Les entretiens se passent en période de cours\n-Candidatures ouvrent le 01/02 sur alternance.imt.fr"
+        "plus":"-https://www.enssat.fr/uploads/site/documents/concours/Notice-Concours_Formations-apprentissage_Enssat.pdf\n-J'ai postulé l'année dernière et je réessaie cette année\n-Les entretiens se passent en période de cours\n-Candidatures ouvrent le 01/02 sur alternance.imt.fr"
     },
     {
         "name":"Polytech Marseille",
